@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-  <el-button type="primary">主要按钮</el-button>
+  <el-button type="primary"><router-link to="/login">主要按钮</router-link></el-button>
   </div>
   <router-view/>
 </template>
