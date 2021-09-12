@@ -2,10 +2,10 @@ import { createApp } from 'vue'
 import App from './App.vue'
 //引入router
 import router from './router'
-//引入elementui-plus
+//引入elementui-plus组件库
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-//引用less
+//加载全局样式less
 import './styles/index.less'
 
 const app = createApp(App)
