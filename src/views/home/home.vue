@@ -4,7 +4,7 @@
 <script>
 export default ({
     name: 'HomeIndex',
-    date() {
+    data() {
         return {}
     },
     methods: {

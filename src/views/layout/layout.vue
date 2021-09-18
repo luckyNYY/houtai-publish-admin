@@ -21,15 +21,16 @@
               <i class="el-icon-arrow-down el-icon--right"></i>
             </div>
           </span>
-          <template #dropdown>
+          <template  v-slot:dropdown>
             <el-dropdown-menu>
               <el-dropdown-item>设置</el-dropdown-item>
-              <el-dropdown-item>退出</el-dropdown-item>
+              <el-dropdown-item
+              @click="onLogout">退出</el-dropdown-item>
             </el-dropdown-menu>
           </template>
         </el-dropdown>
       </el-header>
-      <el-main><router-view /></el-main>
+      <el-main height="auto"><router-view /></el-main>
     </el-container>
   </el-container>
 </template>
@@ -48,9 +49,31 @@ export default {
     };
   },
   methods: {
-      loadUserProflie() {
-          getUSerProfile().then(res => {
-              console.log()
+      // loadUserProflie() {
+      //     getUSerProfile().then(res => {
+      //         console.log()
+      //         this.user = res.data.data
+      //     })
+      // },
+      onLogout() {
+        //console.log("退出了");
+        
+        this.$confirm('是否退出登录状态？', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning',
+        })
+          .then(() => {
+            //把用户状态清除
+            // window.localStorage.removeItem('user')
+            //跳转至登录页面
+            this.$router.push('/login')
+          })
+          .catch(() => {
+            this.$message({
+              type: 'info',
+              message: '已取消退出',
+            })
           })
       }
   },
