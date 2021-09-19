@@ -99,6 +99,7 @@
 //import { getUserProfile,updateUserPhoto,updateUserProfile } from '@/api/user.js'
 import "cropperjs/dist/cropper.css";
 import Cropper from "cropperjs";
+import globalBus from "@/utils/global-bus";
 
 export default {
   name: "SettingIndex",
@@ -156,6 +157,8 @@ export default {
       //   });
       //   //关闭loading
       //   this.onUpdataProfileLoading = false
+      //   //发布通知，用户信息已更改
+       // globalBus.$emit("update-user",this.user)
       // });
     },
     //头像change事件
@@ -230,6 +233,7 @@ export default {
       //     type: 'success',
       //     message: '更新头像成功'
       //    })
+      // globalBus.$emit('update-user', this.user)
       //     //console.log(res);
       //   });
       // });
