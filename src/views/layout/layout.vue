@@ -16,8 +16,8 @@
         <el-dropdown>
           <span class="el-dropdown-link">
             <div class="avatar-wrap">
-              <img class="avatar" src="../../assets/login-background.jpg">
-              <span>用户昵称</span>
+              <img class="avatar" src="https://images.unsplash.com/photo-1441034281545-78296c3a6934?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80">
+              <span>{{ user.username }}</span>
               <i class="el-icon-arrow-down el-icon--right"></i>
             </div>
           </span>
@@ -44,7 +44,9 @@ export default {
   },
   data() {
     return {
-        user: {},//当前用户登录信息
+        user: {
+          username: 'nyy'
+        },//当前用户登录信息
         isCollapse: false
     };
   },
