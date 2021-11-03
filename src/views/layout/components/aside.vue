@@ -17,15 +17,15 @@
     </el-menu-item>
     <el-menu-item index="/user">
       <i class="el-icon-user"></i>
-      <template #title>用户管理</template>
+      <template #title>读者管理</template>
     </el-menu-item>
     <el-menu-item index="/article">
       <i class="el-icon-document"></i>
-      <template #title>文章管理</template>
+      <template #title>图书管理</template>
     </el-menu-item>
     <el-menu-item index="/comment">
       <i class="el-icon-chat-dot-square"></i>
-      <template #title>评论管理</template>
+      <template #title>读者意见</template>
     </el-menu-item>
     <el-menu-item index="/setting">
       <i class="el-icon-s-tools"></i>

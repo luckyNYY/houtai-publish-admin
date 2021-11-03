@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import App from './App'
 //引入router
 import router from './router'
 //引入elementui-plus组件库

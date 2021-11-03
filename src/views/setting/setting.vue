@@ -99,7 +99,7 @@
 //import { getUserProfile,updateUserPhoto,updateUserProfile } from '@/api/user.js'
 import "cropperjs/dist/cropper.css";
 import Cropper from "cropperjs";
-import globalBus from "@/utils/global-bus";
+//import globalBus from "@/utils/global-bus";
 
 export default {
   name: "SettingIndex",

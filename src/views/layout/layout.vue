@@ -13,6 +13,7 @@
             }"
             @click="isCollapse = !isCollapse"
           ></i>
+          图书馆管理系统
         </div>
         <el-dropdown>
           <span class="el-dropdown-link">
@@ -40,7 +41,7 @@
 <script>
 import Aside from "./components/aside";
 // import { getUSerProfile } from '@/api/user'
-import globalBus from "@/utils/global-bus";
+//import globalBus from "@/utils/global-bus";
 
 export default {
   name: "LayoutIndex",

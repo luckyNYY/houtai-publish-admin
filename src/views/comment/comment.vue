@@ -23,14 +23,6 @@
           </el-radio-group>
         </el-col>
       </el-form-item>
-      <el-form-item label="类型">
-        <el-col :span="11">
-          <el-select v-model="form.region" placeholder="请选择类型">
-            <el-option label="文艺" value="shanghai"></el-option>
-            <el-option label="闲聊" value="beijing"></el-option>
-          </el-select>
-        </el-col>
-      </el-form-item>
       <el-form-item label="时间">
         <el-col :span="11">
           <el-date-picker
@@ -54,12 +46,11 @@
     <el-table :data="tableData" stripe style="width: 100%">
       <el-table-column prop="date" label="日期" width="180"> </el-table-column>
       <el-table-column prop="name" label="姓名" width="180"> </el-table-column>
-      <el-table-column prop="address" label="地址" width="240">
+      <el-table-column prop="address" label="意见内容">
       </el-table-column>
       <el-table-column
         prop="tag"
         label="标签"
-        width="100"
         :filters="[
           { text: '全部', value: '全部' },
           { text: '待审核', value: '审核失败' },
@@ -79,10 +70,9 @@
       </el-table-column>
       <el-table-column fixed="right" label="操作" width="160">
         <template #default="scope">
-          <el-button @click="handleClick(scope.row)" type="text" size="small"
+          <el-button @click="handleClick(scope.row)" plain size="small"
             >查看</el-button
           >
-          <el-button type="primary" size="small" >编辑</el-button>
           <el-button
             @click.prevent="deleteRow(scope.$index, tableData)"
             type="danger"

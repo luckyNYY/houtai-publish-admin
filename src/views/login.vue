@@ -10,7 +10,7 @@
         ></el-input>
       </el-form-item>
       <el-form-item prop="code">
-        <el-input v-model="user.code" placeholder="请输入验证码"></el-input>
+        <el-input v-model="user.code" type="password" placeholder="请输入验证码"></el-input>
       </el-form-item>
       <el-form-item prop="agree">
         <el-checkbox v-model="user.agree"

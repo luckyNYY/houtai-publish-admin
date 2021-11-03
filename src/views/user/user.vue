@@ -3,7 +3,7 @@
     <!-- 面包屑 -->
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>用户管理</el-breadcrumb-item>
+      <el-breadcrumb-item>读者管理</el-breadcrumb-item>
     </el-breadcrumb>
     <!-- 面包屑 -->
     <!-- 表单筛选 -->
@@ -12,25 +12,8 @@
       :model="form"
       label-width="80px"
       :label-position="labelPosition"
+      class="form-containner"
     >
-      <el-form-item label="状态">
-        <el-col :span="11">
-          <el-radio-group v-model="form.resource">
-            <el-radio label="全部"></el-radio>
-            <el-radio label="待审核"></el-radio>
-            <el-radio label="审核失败"></el-radio>
-            <el-radio label="审核成功"></el-radio>
-          </el-radio-group>
-        </el-col>
-      </el-form-item>
-      <el-form-item label="类型">
-        <el-col :span="11">
-          <el-select v-model="form.region" placeholder="请选择类型">
-            <el-option label="文艺" value="shanghai"></el-option>
-            <el-option label="闲聊" value="beijing"></el-option>
-          </el-select>
-        </el-col>
-      </el-form-item>
       <el-form-item label="时间">
         <el-col :span="11">
           <el-date-picker
@@ -41,10 +24,6 @@
             end-placeholder="结束日期"
           >
           </el-date-picker>
-        </el-col>
-      </el-form-item>
-      <el-form-item>
-        <el-col :span="11">
           <el-button type="primary" @click="onSubmit">筛选</el-button>
         </el-col>
       </el-form-item>
@@ -52,14 +31,16 @@
     <!-- 表单筛选 -->
     <!-- 表格 -->
     <el-table :data="tableData" stripe style="width: 100%">
-      <el-table-column prop="date" label="日期" width="180"> </el-table-column>
-      <el-table-column prop="name" label="姓名" width="180"> </el-table-column>
+      <el-button>清除筛选</el-button>
+      <el-table-column prop="date" label="注册日期" width="120"></el-table-column>
+      <el-table-column prop="name" label="姓名" width="120"> </el-table-column>
+      <el-table-column prop="phone" label="电话号码" width="120"> </el-table-column>
+      <el-table-column prop="idCard" label="身份证信息" width="190"> </el-table-column>
       <el-table-column prop="address" label="地址" width="240">
       </el-table-column>
       <el-table-column
         prop="tag"
-        label="标签"
-        width="100"
+        label="状态"
         :filters="[
           { text: '全部', value: '全部' },
           { text: '待审核', value: '审核失败' },
@@ -77,18 +58,19 @@
           >
         </template>
       </el-table-column>
-      <el-table-column fixed="right" label="操作" width="160">
+      <el-table-column fixed="right" label="操作" width="240">
         <template #default="scope">
-          <el-button @click="handleClick(scope.row)" type="text" size="small"
+          <el-button @click="handleClick(scope.row)" plain size="small"
             >查看</el-button
           >
-          <el-button type="text" size="small">编辑</el-button>
+          <el-button type="primary" plain size="small">编辑</el-button>
           <el-button
             @click.prevent="deleteRow(scope.$index, tableData)"
-            type="text"
+            type="danger"
+            plain
             size="small"
           >
-            移除
+            删除
           </el-button>
         </template>
       </el-table-column>
@@ -131,24 +113,32 @@ export default {
           date: "2016-05-02",
           name: "王小虎",
           address: "上海市普陀区金沙江路 1518 弄",
+          phone: "12321232121",
+          idCard: "45111111111111111111",
           tag: "审核成功",
         },
         {
           date: "2016-05-04",
           name: "王小虎",
           address: "上海市普陀区金沙江路 1517 弄",
+          phone: "12321232121",
+          idCard: "45111111111111111111",
           tag: "待审核",
         },
         {
           date: "2016-05-01",
           name: "王小虎",
           address: "上海市普陀区金沙江路 1519 弄",
+          phone: "12321232121",
+          idCard: "45111111111111111111",
           tag: "审核失败",
         },
         {
           date: "2016-05-03",
           name: "王小虎",
           address: "上海市普陀区金沙江路 1516 弄",
+          phone: "12321232121",
+          idCard: "45111111111111111111",
           tag: "待审核",
         },
       ],
@@ -173,4 +163,7 @@ export default {
 };
 </script>
 <style scoped lang="less">
+.form-containner {
+  padding-top: 10px;
+}
 </style>
